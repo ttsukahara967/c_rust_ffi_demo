@@ -1,0 +1,13 @@
+[package]
+name = "rustfmt_ffi"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+# staticlib: a .a archive the C linker can consume; rlib: lets `cargo test` link the crate
+crate-type = ["staticlib", "rlib"]
+
+[profile.release]
+opt-level = "s"
+panic = "abort"
+debug = true
